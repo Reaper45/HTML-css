@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chrome-tabs</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+
+<!-- Just Normal Tabs -->
+<div class="tab-container">
+	<h4>Just Normal Tabs </h4>
+	<ul class="tabs">
+		<li><a class="tab active" href="#">First Tab</a></li>
+		<li><a class="tab" href="#">Second Tab</a></li>
+		<li><a class="tab" href="#">Third Tab</a></li>
+		<li><a class="tab" href="#">Fourth Tab</a></li>
+	</ul>
+</div>
+<!-- Chrome Tabs 1-->
+<div class="tab-container chrome">
+	<h4> Chrome Tabs 1</h4>
+	<ul class="tabs chrome-one">
+		<li><a class="tab active" href="#">First Tab</a></li>
+		<li><a class="tab" href="#">Second Tab</a></li>
+		<li><a class="tab" href="#">Third Tab</a></li>
+		<li><a class="tab" href="#">Fourth Tab</a></li>
+	</ul>
+</div>
+
+<!-- Chrome Tabs 2 -->
+<div class="tab-container">
+	<h4> Chrome Tabs 2 </h4>
+	<ul class="tabs chrome-two">
+		<li><a class="tab active" href="#">First Tab</a></li>
+		<li><a class="tab" href="#">Second Tab</a></li>
+		<li><a class="tab" href="#">Third Tab</a></li>
+		<li><a class="tab" href="#">Fourth Tab</a></li>
+	</ul>
+</div>
+
+<!-- Mozilla Tabs -->
+<div class="tab-container">
+	<h4>Mozilla Tabs</h4>
+	<ul class="tabs mozilla">
+		<li><a class="tab active" href="#">First Tab</a></li>
+		<li><a class="tab" href="#">Second Tab</a></li>
+		<li><a class="tab" href="#">Third Tab</a></li>
+		<li><a class="tab" href="#">Fourth Tab</a></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	var tabs = document.querySelectorAll("li a");
+	for (var i = tabs.length - 1; i >= 0; i--) {
+		tabs[i].addEventListener("click", function (argument) {
+			var parent = this.parentNode.parentNode,
+				innerTabs = parent.querySelectorAll("li a")
+			// console.log(parent)
+			for (var i = innerTabs.length - 1; i >= 0; i--) {
+				innerTabs[i].classList.remove("active")
+			}
+			this.classList.add("active")
+		})
+	}
+</script>
+</body>
+</html>
